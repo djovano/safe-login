@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# SafeLogin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um sistema simples e seguro de autenticação com **React + Node.js + JWT**, com:
 
-## Available Scripts
+- Controle de acesso
+- Criptografia de senhas com `bcrypt`
+- Autenticação com tokens `JWT`
+- Validação de entradas
+- Tratamento de erros
+- Integração frontend/backend
 
-In the project directory, you can run:
+---
 
-### `npm start`
+##  Estrutura de Pastas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+SafeLogin/
+├── frontend/ → Interface feita em React
+└── backend/ → API Node.js com Express e autenticação JWT
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Como Rodar o Projeto
 
-### `npm test`
+ Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+cd backend
+npm install
+Crie um arquivo .env com o seguinte conteúdo:
 
-### `npm run build`
+JWT_SECRET=meu_token_seguro_123
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ Este segredo será usado para assinar tokens JWT. Mantenha-o seguro.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+💻 Frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+cd ../frontend
+npm install
 
-### `npm run eject`
+Para rodar o backend:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+cd backend
+npx nodemon index.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para rodar o fronend:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+cd frontend
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Funcionalidades
+Tela de login com TailwindCSS
 
-## Learn More
+Login com email e senha (armazenados com hash bcrypt)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Retorno de token JWT ao autenticar
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Validação de campos obrigatórios
 
-### Code Splitting
+Mensagens de erro amigáveis
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Rota privada protegida por token no backend
 
-### Analyzing the Bundle Size
+## Tecnologias
+Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+React
 
-### Making a Progressive Web App
+Tailwind CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Backend
 
-### Advanced Configuration
+Node.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Express
 
-### Deployment
+JWT (jsonwebtoken)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Bcrypt (bcrypt)
 
-### `npm run build` fails to minify
+Dotenv
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+CORS
